@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+      function blinktext() {
+  var f = document.getElementById('Math');
+  setInterval(function() {
+    f.style.visibility = (f.style.visibility == 'hidden' ? '' : 'hidden');
+  }, 1000);
+}
+    </script>
+</head>
+
+  <style>
+    
+    body{
+      
+      background-image: url("images/back.jpg");
+      background-repeat: no-repeat;
+      background-size: 95%;
+      margin-left: 300px;
+      margin-top: 50px;
+      position: fixed;
+      background-position-x: center;
+      
+    }
+    p{
+      font-family:Georgia, 'Times New Roman', Times, serif;
+      font-stretch: extra-expanded;
+      font-size: 30px;
+      
+    }
+    img{
+      width: 150px;
+      height: 150px;
+      margin-left: 30px;
+    }
+  </style>
+
+<body onload="blinktext();"><p id = "Math"> WELCOME TO BASIC MATH GAME</p>
+  <ul>
+    <li><a class="active" href="home.html">Home<br><img src="images/home.png"></a></li>
+    <li><a href="learn.html">Learn<br><img src="images/learn.png"></a></li>
+    <li><a href="game.html">Game<br><img src="images/game.png"></a></li>
+  </ul>
+  
+  </body>
+</body>
+</html>
+
+
+
+
+
+
+
+

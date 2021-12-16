@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>level-13</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width" initial scale-scale="1">
+        <style>
+            #Question{
+                display: flex;
+                font-size: 20mm;
+            }
+            h1{
+                padding: 20px;
+                font-family: cursive;
+            }
+            body{
+                margin: 40px 150px;
+                min-width: 600px;
+                background-image : url("../images/background.jpg");
+                background-repeat: no-repeat;
+                background-size: 1300px;
+            }
+            #ar{
+            width: 150px;
+            height: 70px;
+            padding: 0px 10px;
+            text-align: center;
+        }
+            #sum{
+                width: 100px;
+                height: 20mm;
+                padding: 10px 20px;
+                font-family: cursive;
+                font-size: 15mm;
+                align-self: center;
+                background-color: lightgreen;
+            }
+            #p1{
+                font-family: cursive;
+                font-size: 15mm;
+            }
+            #btn{
+                width: 200px;
+                height: 20mm;
+                font-family: cursive;
+                font-size: 15mm;
+                background-color: lightskyblue;
+                margin-left: 30%;
+                margin-top: -10%;
+            }
+            #overlay {
+            position: fixed;
+            display: none;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5);
+            z-index: 2;
+            cursor: pointer;
+            }
+
+            #t{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%,-50%);
+            -ms-transform: translate(-50%,-50%);
+            }
+            img:hover {
+                animation: shake 0.5s;
+                animation-iteration-count: infinite;
+            }
+
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(3px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(3px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(1px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+                }
+        </style>
+    </head>
+    <body>
+        <div id="Question">
+            <h1 id="random1"></h1>
+            <h1>-</h1>
+            <h1 id="random2"></h1><br>
+            <h1>=</h1>
+            </div>
+            <div >
+            <input style="position: fixed;" type="text" id="sum" name="sum">
+        
+        <input type="button" id="btn" value="Submit" onclick="on()"
+                onmouseover="document.getElementById('btn').style.backgroundColor='red'"
+                onmouseleave="document.getElementById('btn').style.backgroundColor='lightskyblue'" 
+                >
+                <!--<p id = "p1"></p>-->
+                <a id = "dis"><img id="ar" src="images/arrow.png" alt="arrow"></img></a>
+                <div id="overlay" onclick="off()">
+                <div id="t"></div>
+                </div>
+            </div>
+
+        <script>
+            var a=Math.floor(Math.random()*90+10);
+            var b=Math.floor(Math.random()*90+10);
+            document.getElementById("random1").innerHTML=a;
+            document.getElementById("random2").innerHTML=b;
+            
+            function on(){
+            document.getElementById("overlay").style.display = "block";
+            var addition=a-b;
+            var addition2=document.getElementById("sum").value;
+            
+            if(addition==addition2){
+                document.getElementById("t").innerHTML="Correct Answer";
+                document.getElementById("dis").href="level14.html";
+            }
+            else{
+                document.getElementById("t").innerHTML="Incorrect Answer please Try Again!";
+            }
+        }
+        function off() {
+            document.getElementById("overlay").style.display = "none";
+            }
+        </script>
+        
+    </body>
+</html>
